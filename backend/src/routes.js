@@ -6,7 +6,9 @@ const AuthorController = require('./controllers/AuthorController');
 const routes = express.Router();
 
 routes.post('/feeds',FeedController.store);
-routes.post('/authors',AuthorController.store)
+routes.get('/feeds',FeedController.index);
+routes.post('/authors',AuthorController.store);
+routes.get('/authors',AuthorController.index);
 
 module.exports = routes;
 

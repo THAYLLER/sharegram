@@ -1,7 +1,13 @@
 const Authors = require('../models/Authors');
 
 module.exports = {
+    
+    async index(req, res) {
 
+        let authors = await Authors.find();
+
+        return res.json(authors);
+    },
     async store(req, res){
 
         const { name } = req.body;

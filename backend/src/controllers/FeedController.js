@@ -3,6 +3,12 @@ const Authors = require('../models/Authors');
 
 module.exports = {
 
+    async index(req, res) {
+
+        let feeds = await Feeds.find().populate('author');
+
+        return res.json(feeds);
+    },
     async store(req, res){
 
         const { image } = req.body;
